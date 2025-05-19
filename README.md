@@ -18,7 +18,8 @@ oxlib - https://github.com/overextended/ox_lib
 1. Tempatkan folder script ini ke dalam direktori `resources` pada server FiveM kamu.
 2. Tambahkan ke `server.cfg`:
    ```cfg
-   ensure cloud_rockstar_editor```
+   ensure cloud-editor
+   ```
 
 ## 🎮 Cara Menggunakan
 
