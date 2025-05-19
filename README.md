@@ -28,4 +28,4 @@ oxlib - https://github.com/overextended/ox_lib
 
 ## 📷 Preview
 
-!Preview[https://cdn.discordapp.com/attachments/1157215462225084428/1373938353522606080/Screenshot_2025-05-18_214753.png?ex=682c3b4e&is=682ae9ce&hm=9f0b1a1e34974b53eaa33d5eee2a50b42e357179bf69e3386e2b818da0658b34&]
+![Preview](https://cdn.discordapp.com/attachments/1157215462225084428/1373938353522606080/Screenshot_2025-05-18_214753.png?ex=682c3b4e&is=682ae9ce&hm=9f0b1a1e34974b53eaa33d5eee2a50b42e357179bf69e3386e2b818da0658b34&)
