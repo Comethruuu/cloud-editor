@@ -1,5 +1,6 @@
 fx_version 'cerulean'
-games { 'gta5' }
+games {'gta5'}
+
 author 'cloud'
 repository 'https://github.com/Comethruuu/cloud-editor.git'
 lua54 'yes'
