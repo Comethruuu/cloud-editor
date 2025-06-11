@@ -1,22 +1,34 @@
+local notifyStyle = {
+    backgroundColor = '#141517',
+    color = '#C1C2C5',
+    ['.description'] = {
+        color = '#909296'
+    }
+}
+
+local function showNotification(id, description)
+    lib.notify({
+        id = id,
+        title = 'Rockstar Editor',
+        description = description,
+        position = 'top',
+        style = notifyStyle,
+    })
+end
+
 lib.registerMenu({
     id = 'editor',
     title = '☁️ Cloud Rockstar Editor ☁️',
     position = 'bottom-right',
     options = {
-        {label = 'Record', args = {id = 'record'}},
+        {label = 'Record',    args = {id = 'record'}},
         {label = 'Save Clip', args = {id = 'save'}},
         {label = 'Delete Clip', args = {id = 'discard'}},
-        {label = 'Enter Rockstar Editor', args = {id = 'enter'}}
+        {label = 'Enter Rockstar Editor', args = {id = 'gointo:editor'}}
     }
 }, function(selected, scrollIndex, args)
-    if args.id == 'record' then
-        TriggerEvent('record')
-    elseif args.id == 'save' then
-        TriggerEvent('saveclip')
-    elseif args.id == 'discard' then
-        TriggerEvent('discard')
-    elseif args.id == 'enter' then
-        TriggerEvent('gointo:editor')
+    if args and args.id then
+        TriggerEvent(args.id)
     end
     print(selected, scrollIndex, args)
 end)
@@ -27,70 +39,29 @@ end, false)
 
 RegisterKeyMapping('editor', 'Open Rockstar Editor Menu', 'keyboard', 'F7')
 
-RegisterNetEvent("record")
-AddEventHandler("record", function()
+RegisterNetEvent("record", function()
     StartRecording(1)
-    lib.notify({
-        id = 'record_notify',
-        title = 'Rockstar Editor',
-        description = 'Recording started.',
-        position = 'top',
-        style = {
-            backgroundColor = '#141517',
-            color = '#C1C2C5',
-            ['.description'] = {
-              color = '#909296'
-            }
-        },
-    })
+    showNotification('record_notify', 'Recording started.')
 end)
 
-RegisterNetEvent("saveclip")
-AddEventHandler("saveclip", function()
+RegisterNetEvent("save", function()
     StartRecording(0)
     StopRecordingAndSaveClip()
-    lib.notify({
-        id = 'save_notify',
-        title = 'Rockstar Editor',
-        description = 'Clip saved.',
-        position = 'top',
-        style = {
-            backgroundColor = '#141517',
-            color = '#C1C2C5',
-            ['.description'] = {
-              color = '#909296'
-            }
-        },
-    })
+    showNotification('save_notify', 'Clip saved.')
 end)
 
-RegisterNetEvent("discard")
-AddEventHandler("discard", function()
+RegisterNetEvent("discard", function()
     StopRecordingAndDiscardClip()
-    lib.notify({
-        id = 'discard_notify',
-        title = 'Rockstar Editor',
-        description = 'Clip discarded.',
-        position = 'top',
-        style = {
-            backgroundColor = '#141517',
-            color = '#C1C2C5',
-            ['.description'] = {
-              color = '#909296'
-            }
-        },
-    })
+    showNotification('discard_notify', 'Clip discarded.')
 end)
 
-RegisterNetEvent("gointo:editor")
-AddEventHandler("gointo:editor", function()
+RegisterNetEvent("gointo:editor", function()
     local alert = lib.alertDialog({
         header = 'Rockstar Editor',
         content = 'Press confirm to leave the server and go to Rockstar Editor',
         centered = true,
         cancel = true
     })
-
     if alert == 'confirm' then
         NetworkSessionLeaveSinglePlayer()
         ActivateRockstarEditor()
