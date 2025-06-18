@@ -1,13 +1,12 @@
 ---
-# Rockstar Editor Menu FiveM [ESX / QB Core] [ID]
+# 🎬 Rockstar Editor Menu FiveM [ESX / QB Core]
 
 ---
-## 🎬 Fitur
-
-- 🔴 Mulai merekam (Start Recording)
-- 💾 Simpan clip hasil rekaman (Save Clip)
-- ❌ Hapus clip (Discard Clip)
-- 🎥 Masuk ke Rockstar Editor (Leave to Rockstar Editor)
+## 🎯 Features
+-🔴 Start Recording
+-💾 Save Recorded Clip
+-❌ Discard Clip
+-🎥 Leave to Rockstar Editor
 
 ---
 ## 🛠️ Requirements
