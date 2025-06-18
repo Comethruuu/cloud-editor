@@ -3,10 +3,10 @@
 
 ---
 ## 🎯 Features
--🔴 Start Recording
--💾 Save Recorded Clip
--❌ Discard Clip
--🎥 Leave to Rockstar Editor
+- 🔴 Start Recording
+- 💾 Save Recorded Clip
+- ❌ Discard Clip
+- 🎥 Leave to Rockstar Editor
 
 ---
 ## 🛠️ Requirements
@@ -16,17 +16,16 @@ oxlib - https://github.com/overextended/ox_lib
 ---
 ## 📂 Instalasi
 
-1. Tempatkan folder script ini ke dalam direktori `resources` pada server FiveM kamu.
-2. Tambahkan ke `server.cfg`:
+1. Place this script folder inside the resources directory of your FiveM server.
+2. Add the following line to your `server.cfg`:
    ```cfg
    ensure cloud-editor
    ```
 
 ---
-## 🎮 Cara Menggunakan
-
-1. Tekan F7 untuk membuka menu Rockstar Editor.
-2. Atau gunakan perintah:
+## 🎮 How to Use
+1. Press F7 to open the Rockstar Editor menu.
+2. Or use the command:
    `/editor`
 
 ---
